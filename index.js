@@ -47,3 +47,12 @@ function maxOf(array, max = 0) {
     return max > array[0] ? max : array[0]
   }
 }
+
+function includesNumber(array, number) {
+  if (array.length > 1) {
+    const current = array.shift()
+    return current === number ? true : includesNumber(array, number)
+  } else {
+    return array[0] === number
+  }
+}
