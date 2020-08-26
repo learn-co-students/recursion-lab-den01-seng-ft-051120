@@ -30,3 +30,9 @@ function isPalindrome(string) {
     return false
   }
 }
+
+function addUpTo(array, index) {
+  if (index > 0) {
+    return array[index] + addUpTo(array, index - 1)
+  } else return array[0]
+}
