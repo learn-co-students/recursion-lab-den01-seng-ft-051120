@@ -36,3 +36,14 @@ function addUpTo(array, index) {
     return array[index] + addUpTo(array, index - 1)
   } else return array[0]
 }
+
+function maxOf(array, max = 0) {
+  if (array.length > 1) {
+    const current = array.pop()
+    if (current > max) {
+      return maxOf(array, current)
+    } else return maxOf(array, max)
+  } else {
+    return max > array[0] ? max : array[0]
+  }
+}
