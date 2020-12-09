@@ -12,12 +12,13 @@ function reverseString(string) {
 }
 
 function isPalindrome(string) {
-  if (string.length === 0) return true;
   const firstCharacter = string.charAt(0);
   const lastCharacter = string.charAt(string.length-1);
-  return firstCharacter === lastCharacter
-    ? isPalindrome(string.slice(1, string.length-1))
-    : false
+  if (firstCharacter === lastCharacter && string.length > 1) {
+    return isPalindrome(string.slice(1, string.length-1));
+  } else if (firstCharacter === lastCharacter) {
+    return true;
+  } else return false;
 }
 
 function addUpTo(integers, index) {
